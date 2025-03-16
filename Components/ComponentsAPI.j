@@ -29,6 +29,10 @@ library COMPONENTSAPI initializer COMPONENTSAPI_INIT
             return this
         endmethod
 
+        method onDestroy takes nothing returns nothing 
+            call data.destroy()
+        endmethod
+
         public static method Register takes Component component returns nothing
             local integer topHandle = LoadIntegerBJ(component.id, 0, udg_ht_components)
             local integer bottomHandle = LoadIntegerBJ(component.id, 1, udg_ht_components)
